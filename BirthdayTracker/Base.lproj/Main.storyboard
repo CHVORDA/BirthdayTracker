@@ -1,24 +1,192 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UXR-Th-A1Q">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Birthdays-->
+        <scene sceneID="2bt-qX-Fii">
+            <objects>
+                <tableViewController title="Birthdays" id="qiu-nA-85J" customClass="BirthdaysTableViewController" customModule="BirthdayTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="BfQ-Ur-uOi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="birthdayCellIdentifier" textLabel="uU7-NL-AmQ" detailTextLabel="Scv-hC-I71" style="IBUITableViewCellStyleSubtitle" id="DTZ-4e-tVU">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DTZ-4e-tVU" id="8K9-LK-QkO">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uU7-NL-AmQ">
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Scv-hC-I71">
+                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qiu-nA-85J" id="MWQ-KH-wbR"/>
+                            <outlet property="delegate" destination="qiu-nA-85J" id="WJV-Cj-cPs"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Birthdays" id="K92-iS-EX7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="HHs-Zg-1ua">
+                            <connections>
+                                <segue destination="qjX-z0-bi1" kind="presentation" id="puh-mj-6gT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SfK-DO-UCC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="271.19999999999999" y="135.38230884557723"/>
+        </scene>
+        <!--Add birthday-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AddBirthdayViewController" customModule="BirthdayTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="First name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHA-Ah-Uy4">
+                                <rect key="frame" x="20" y="100" width="100" height="21"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Last name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usd-gu-giU">
+                                <rect key="frame" x="20" y="170" width="100" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Birthdate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoL-s8-vyK">
+                                <rect key="frame" x="20" y="250" width="100" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qIA-Hx-QwF">
+                                <rect key="frame" x="20" y="130" width="280" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f9T-Un-NxJ">
+                                <rect key="frame" x="20" y="200" width="280" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tcv-1W-csy">
+                                <rect key="frame" x="0.0" y="280" width="320" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="576158716.58648396">
+                                    <!--2019-04-05 12:05:16 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="f9T-Un-NxJ" firstAttribute="centerX" secondItem="Tcv-1W-csy" secondAttribute="centerX" id="1pV-IK-Ksg"/>
+                            <constraint firstItem="Tcv-1W-csy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="825-h5-fLP"/>
+                            <constraint firstItem="qIA-Hx-QwF" firstAttribute="top" secondItem="aHA-Ah-Uy4" secondAttribute="bottom" constant="9" id="9un-qm-WkB"/>
+                            <constraint firstItem="aHA-Ah-Uy4" firstAttribute="trailing" secondItem="usd-gu-giU" secondAttribute="trailing" id="Jfr-5P-BFn"/>
+                            <constraint firstItem="Tcv-1W-csy" firstAttribute="top" secondItem="JoL-s8-vyK" secondAttribute="bottom" constant="9" id="LOE-sJ-Ekn"/>
+                            <constraint firstItem="JoL-s8-vyK" firstAttribute="top" secondItem="f9T-Un-NxJ" secondAttribute="bottom" constant="20" id="LYW-tJ-AtN"/>
+                            <constraint firstItem="f9T-Un-NxJ" firstAttribute="top" secondItem="usd-gu-giU" secondAttribute="bottom" constant="9" id="Q7Q-HX-9Gs"/>
+                            <constraint firstItem="qIA-Hx-QwF" firstAttribute="trailing" secondItem="f9T-Un-NxJ" secondAttribute="trailing" id="QNK-e7-wf8"/>
+                            <constraint firstItem="aHA-Ah-Uy4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="VEK-8x-60V"/>
+                            <constraint firstItem="usd-gu-giU" firstAttribute="trailing" secondItem="JoL-s8-vyK" secondAttribute="trailing" id="chx-53-4Yb"/>
+                            <constraint firstAttribute="trailing" secondItem="Tcv-1W-csy" secondAttribute="trailing" id="d4j-xy-75c"/>
+                            <constraint firstItem="qIA-Hx-QwF" firstAttribute="leading" secondItem="usd-gu-giU" secondAttribute="leading" id="dac-LA-9qc"/>
+                            <constraint firstItem="aHA-Ah-Uy4" firstAttribute="leading" secondItem="qIA-Hx-QwF" secondAttribute="leading" id="dpZ-ah-JRb"/>
+                            <constraint firstItem="usd-gu-giU" firstAttribute="top" secondItem="qIA-Hx-QwF" secondAttribute="bottom" constant="10" id="ejK-qU-M5q"/>
+                            <constraint firstItem="aHA-Ah-Uy4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gA2-gR-jHM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aHA-Ah-Uy4" secondAttribute="trailing" constant="255" id="gCT-Hs-VCQ"/>
+                            <constraint firstItem="f9T-Un-NxJ" firstAttribute="leading" secondItem="JoL-s8-vyK" secondAttribute="leading" id="ufF-jP-8MW"/>
+                            <constraint firstItem="usd-gu-giU" firstAttribute="leading" secondItem="f9T-Un-NxJ" secondAttribute="leading" id="ufm-Qy-jUJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add birthday" id="TWr-58-vxH">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="R2a-1D-sTw">
+                            <connections>
+                                <action selector="cancelTapped:" destination="BYZ-38-t0r" id="A0F-vJ-qH5"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="kNT-Pv-6Mi">
+                            <connections>
+                                <action selector="saveTaped:" destination="BYZ-38-t0r" id="6zU-7V-Rca"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="birthdatePicker" destination="Tcv-1W-csy" id="gXh-kx-lrh"/>
+                        <outlet property="firstNameTextField" destination="qIA-Hx-QwF" id="JnM-bn-oG9"/>
+                        <outlet property="lastNameTextField" destination="f9T-Un-NxJ" id="T6J-Y4-yTp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2015.2" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xL6-ig-25i">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UXR-Th-A1Q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sw0-Qx-c44">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qiu-nA-85J" kind="relationship" relationship="rootViewController" id="D9s-Jb-Kad"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jj2-Z9-5bC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-668" y="135.38230884557723"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mRS-lM-yTp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qjX-z0-bi1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ody-7E-4CA">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="HMV-Xk-0Sp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d8n-TT-Ixv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
