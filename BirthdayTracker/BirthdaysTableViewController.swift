@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BirthdaysTableViewController: UITableViewController {
+class BirthdaysTableViewController: UITableViewController, AddBirthdayViewControllerDelegate {
     
     var birthdays = [Birthday] ()
     let dateFormatter = DateFormatter()
@@ -43,7 +43,13 @@ class BirthdaysTableViewController: UITableViewController {
         
         return cell
     }
- 
+    
+    // MARK: - AddBirthdayViewControllerDelegate
+    
+    func addBirthdayViewController(_ addBirthdayViewController: AddBirthdayViewController, didAddBirthday birthday: Birthday) {
+        birthdays.append(birthday)
+        tableView.reloadData()
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -80,14 +86,19 @@ class BirthdaysTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        let navigationController = segue.destination as! UINavigationController
+        
+        let addBirthdayViewController = navigationController.topViewController as! AddBirthdayViewController
+        
+        addBirthdayViewController.delegate = self
     }
-    */
+    
 
 }
