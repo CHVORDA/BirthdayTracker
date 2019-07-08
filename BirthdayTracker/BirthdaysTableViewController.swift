@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class BirthdaysTableViewController: UITableViewController, AddBirthdayViewControllerDelegate {
+class BirthdaysTableViewController: UITableViewController {
     
     var birthdays = [Birthday] ()
     let dateFormatter = DateFormatter()
@@ -52,17 +52,17 @@ class BirthdaysTableViewController: UITableViewController, AddBirthdayViewContro
         
         let birthday = birthdays[indexPath.row]
         
-        cell.textLabel?.text = birthday.firstName + " " + birthday.lastName
-        cell.detailTextLabel?.text = dateFormatter.string(from: birthday.birthdate)
+        let firstName = birthday.firstName ?? ""
+        let lastName = birthday.lastName ?? ""
+        cell.textLabel?.text = firstName + " " + lastName
+        
+        if let date = birthday.birthdate as Date? {
+            cell.detailTextLabel?.text = dateFormatter.string(from: date)
+        } else {
+            cell.detailTextLabel?.text = " "
+        }
         
         return cell
-    }
-    
-    // MARK: - AddBirthdayViewControllerDelegate
-    
-    func addBirthdayViewController(_ addBirthdayViewController: AddBirthdayViewController, didAddBirthday birthday: Birthday) {
-        birthdays.append(birthday)
-        tableView.reloadData()
     }
 
     /*
@@ -99,20 +99,5 @@ class BirthdaysTableViewController: UITableViewController, AddBirthdayViewContro
         return true
     }
     */
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        let navigationController = segue.destination as! UINavigationController
-        
-        let addBirthdayViewController = navigationController.topViewController as! AddBirthdayViewController
-        
-        addBirthdayViewController.delegate = self
-    }
-    
 
 }
